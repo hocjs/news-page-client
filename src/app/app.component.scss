@@ -1,0 +1,16 @@
+.my-navs{
+  li{
+    cursor: pointer;
+    a{
+      font-size: 15pt;
+      font-weight: bold;
+    }
+  }
+
+  li:hover{
+    background-color: #5e6e5e;
+    a{
+      font-weight: bold;
+    }
+  }
+}
