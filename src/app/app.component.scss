@@ -18,3 +18,50 @@ header{
     }
   }
 }
+.main_footer {
+  background-color: #242424;
+  z-index: 999;
+  position: relative;
+  margin: 0 0;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  h3 {
+    color: #808080;
+    font-weight: 900;
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 100;
+  }
+
+  ul {
+    list-style: none;
+    text-align: left;
+
+    li {
+      font-size: 14px;
+      color: #ccc;
+      font-weight: 100;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: #0066cc;
+    cursor: help;
+  }
+
+  button:hover {
+    text-decoration: underline;
+  }
+}
