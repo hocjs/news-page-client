@@ -5,10 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {routing} from "./app.routing";
+import {HomePageComponent} from "./homePageComponent/home-page.component";
+import {AdminLoginComponent} from "./adminLoginComponent/admin-login.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
