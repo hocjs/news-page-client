@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import {routing} from "./app.routing";
 import {HomePageComponent} from "./homePageComponent/home-page.component";
 import {AdminLoginComponent} from "./adminLoginComponent/admin-login.component";
+import {SignUpComponent} from "./signUpComponent/sign-up.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import {AdminLoginComponent} from "./adminLoginComponent/admin-login.component";
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [Window],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -65,3 +65,12 @@ header{
     text-decoration: underline;
   }
 }
+
+.sticky-footer {
+  position: absolute;
+  margin-top: -105px;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 105px;
+}
