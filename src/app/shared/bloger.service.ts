@@ -19,8 +19,14 @@ export class BlogerService {
   constructor(private http: Http, private router: Router){
   }
 
-  registerBloger(bloger: Bloger){
-    // this.http.post(serverApi + "user",)
+  registerBloger(bloger){
+    console.log(bloger);
+    let body = JSON.stringify({login: bloger.login, password: bloger.password, photoUrl: bloger.photoUrl});
+    let headers = new Headers({ 'Content-Type': 'application/json'});
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(serverApi + "user/create", body, options).map(res => {
+      return res.json();
+    });
   }
 
   signIn(login, password){

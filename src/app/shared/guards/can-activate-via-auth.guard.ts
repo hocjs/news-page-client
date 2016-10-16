@@ -5,7 +5,8 @@ import {BlogerService} from "../bloger.service";
 @Injectable()
 export class CanActivateViaAuthGuard implements CanActivate {
 
-  constructor(private blogerService: BlogerService, private router: Router) {}
+  constructor(private blogerService: BlogerService,
+              private router: Router) {}
 
   canActivate() {
     let bool = this.blogerService.isLoggedIn();

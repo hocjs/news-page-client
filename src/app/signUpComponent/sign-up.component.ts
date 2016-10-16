@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Bloger} from "../shared/bloger";
+import {BlogerService} from "../shared/bloger.service";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'sign-up',
@@ -7,15 +9,22 @@ import {Bloger} from "../shared/bloger";
     styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  constructor() { }
+
+  constructor(private blogerService: BlogerService, private router: Router) { }
 
   ngOnInit() { }
 
-  bloger: Bloger;
-
+  bloger = {
+    login: "",
+    photoUrl: "",
+    password: ""
+  }
 
   registerBloger(){
-
+    this.blogerService.registerBloger(this.bloger).subscribe(data => {
+      this.blogerService.saveBloger(data);
+      this.router.navigate(['profile']);
+    });
   }
 
 
