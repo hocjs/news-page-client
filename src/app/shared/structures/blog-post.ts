@@ -1,8 +1,8 @@
 export interface BlogPost {
-
   _id: number;
   name: string;
-  description: string;
+  content: string;
+  points: number;
   // imageUrl: string;
   // publishDate: Date;
 }

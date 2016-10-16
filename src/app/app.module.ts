@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import {PostService} from "./shared/post.service";
 import {CanActivateViaAuthGuard} from "./shared/guards/can-activate-via-auth.guard";
+import { NewBlogPostComponent } from './new-blog-post/new-blog-post.component';
+import {CKEditorModule} from "ng2-ckeditor";
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import {CanActivateViaAuthGuard} from "./shared/guards/can-activate-via-auth.gua
     SignUpComponent,
     BlogerSignInComponent,
     ProfileComponent,
-    ArticlesListComponent
+    ArticlesListComponent,
+    NewBlogPostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    CKEditorModule
   ],
   providers: [Window, BlogerService, PostService, CanActivateViaAuthGuard],
   bootstrap: [AppComponent]

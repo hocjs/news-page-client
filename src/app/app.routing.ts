@@ -5,6 +5,7 @@ import {SignUpComponent} from "./signUpComponent/sign-up.component";
 import {BlogerSignInComponent} from "./bloger-sign-in/bloger-sign-in.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {CanActivateViaAuthGuard} from "./shared/guards/can-activate-via-auth.guard";
+import {NewBlogPostComponent} from "./new-blog-post/new-blog-post.component";
 
 const appRoutes: Routes = [
   {
@@ -29,6 +30,13 @@ const appRoutes: Routes = [
     canActivate: [
       CanActivateViaAuthGuard
     ]
+  },
+  {
+    path: 'new-blog-post',
+    component: NewBlogPostComponent,
+    // canActivate: [
+    //   CanActivateViaAuthGuard
+    // ]
   },
   {
     path: '**',
