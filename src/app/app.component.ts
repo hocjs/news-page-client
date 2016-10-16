@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HomePageComponent } from './homePageComponent/home-page.component';
+import {BlogerService} from "./shared/bloger.service";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,8 @@ import { HomePageComponent } from './homePageComponent/home-page.component';
 })
 export class AppComponent {
   title = 'app works!';
-  
+
+  constructor(public blogerService: BlogerService){
+    this.blogerService.retrieveBloger();
+  }
 }

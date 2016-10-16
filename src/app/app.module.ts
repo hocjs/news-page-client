@@ -8,13 +8,18 @@ import {routing} from "./app.routing";
 import {HomePageComponent} from "./homePageComponent/home-page.component";
 import {AdminLoginComponent} from "./adminLoginComponent/admin-login.component";
 import {SignUpComponent} from "./signUpComponent/sign-up.component";
+import { BlogerSignInComponent } from './bloger-sign-in/bloger-sign-in.component';
+import {BlogerService} from "./shared/bloger.service";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     AdminLoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    BlogerSignInComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,7 @@ import {SignUpComponent} from "./signUpComponent/sign-up.component";
     HttpModule,
     routing
   ],
-  providers: [Window],
+  providers: [Window, BlogerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

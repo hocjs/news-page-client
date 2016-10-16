@@ -18,7 +18,8 @@
           <li routerLinkActive="active"><a routerLink="/blog">Блог</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right my-navs">
-          <li routerLinkActive="active"><a routerLink="/sign-up">Зарегистрироваться</a></li>
+          <li routerLinkActive="active" *ngIf="!blogerService.authToken"><a routerLink="/sign-up">Зарегистрироваться как блогер</a></li>
+          <li routerLinkActive="active" *ngIf="blogerService.authToken"><a routerLink="/profile">Профиль</a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
