@@ -4,6 +4,7 @@ import {AdminLoginComponent} from "./adminLoginComponent/admin-login.component";
 import {SignUpComponent} from "./signUpComponent/sign-up.component";
 import {BlogerSignInComponent} from "./bloger-sign-in/bloger-sign-in.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {CanActivateViaAuthGuard} from "./shared/guards/can-activate-via-auth.guard";
 
 const appRoutes: Routes = [
   {
@@ -24,7 +25,10 @@ const appRoutes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [
+      CanActivateViaAuthGuard
+    ]
   },
   {
     path: '**',

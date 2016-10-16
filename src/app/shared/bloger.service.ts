@@ -4,6 +4,7 @@ import {Http, RequestOptions, Headers} from "@angular/http";
 import {serverApi} from "../constants";
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import {Router} from "@angular/router";
 @Injectable()
 export class BlogerService {
 
@@ -11,10 +12,11 @@ export class BlogerService {
   bloger: Bloger = {
     id: "",
     login: "",
-    photoUrl: ""
+    photoUrl: "",
+    points: 0
   };
 
-  constructor(private http: Http){
+  constructor(private http: Http, private router: Router){
   }
 
   registerBloger(bloger: Bloger){
@@ -36,6 +38,7 @@ console.log(1234567890);
     this.bloger.id = data['user']['id'];
     this.bloger.login = data['user']['login'];
     this.bloger.photoUrl = data['user']['photoUrl'];
+    this.bloger.points = data['user']['points'];
     this.authToken = data['token'];
     localStorage.setItem('Authorization', this.authToken);
     localStorage.setItem('blogerId', this.bloger.id);
@@ -54,7 +57,29 @@ console.log(1234567890);
         this.bloger.id = data.id;
         this.bloger.login = data.login;
         this.bloger.photoUrl = data.photoUrl;
+        this.bloger.points = data.points;
       });
+    }
+  }
+
+  logOut(){
+    this.authToken = null;
+    this.bloger = {
+      id: "",
+      login: "",
+      photoUrl: "",
+      points: 0
+    };
+    localStorage.removeItem("Authorization");
+    localStorage.removeItem("blogerId");
+    this.router.navigate(['home']);
+  }
+
+  isLoggedIn(){
+    if(this.authToken && this.bloger.id != ""){
+      return true;
+    }else{
+      return false;
     }
   }
 }

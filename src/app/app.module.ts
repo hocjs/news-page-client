@@ -11,6 +11,9 @@ import {SignUpComponent} from "./signUpComponent/sign-up.component";
 import { BlogerSignInComponent } from './bloger-sign-in/bloger-sign-in.component';
 import {BlogerService} from "./shared/bloger.service";
 import { ProfileComponent } from './profile/profile.component';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
+import {PostService} from "./shared/post.service";
+import {CanActivateViaAuthGuard} from "./shared/guards/can-activate-via-auth.guard";
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { ProfileComponent } from './profile/profile.component';
     AdminLoginComponent,
     SignUpComponent,
     BlogerSignInComponent,
-    ProfileComponent
+    ProfileComponent,
+    ArticlesListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     routing
   ],
-  providers: [Window, BlogerService],
+  providers: [Window, BlogerService, PostService, CanActivateViaAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
